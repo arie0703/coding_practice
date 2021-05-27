@@ -7,11 +7,11 @@ t3 = "de kr kd eoya kw aej tysr re ujdr lkgc jv"
 
 def translation(text):
     table = str.maketrans({
-        'a':'y', 'b':'n', 'c':'e', 'd':'s', 'e':'o',
+        'a':'y', 'b':'h', 'c':'e', 'd':'s', 'e':'o',
         'f': 'c', 'g': 'v', 'h':'x', 'i':'d', 'j':'u',
         'k':'i', 'l':'g', 'n':'b', 'm':'l', 'o':'k',
         'p':'r', 'q':'z', 'r': 't', 's':'n', 't':'w',
-        'u':'j', 'v':'p', 'x':'m', 'y':'a', 'z':'f'
+        'u':'j', 'v':'p', 'w': 'f', 'x':'m', 'y':'a', 'z':'q'
     })
 
     print(text.translate(table))
