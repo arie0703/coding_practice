@@ -7,6 +7,7 @@ def shortest_path_length_without_nx(G, source, target):
     # 以降，前出の関数shortest_path_length_with_nxと同じコメントは省略する．
     C = set([source])
     queue = [source]
+    print(queue)
     dist = {source: 0}
     while len(queue) > 0:
         v = queue.pop(0)
