@@ -57,7 +57,39 @@ def combinationDFS(candidates, target):
     dfs(0)
     return res
 
-print(combinationDFS([2,3,5], 8))
+
+#candidates内の数字を重複して使用できない仕様
+def combinationSum2(candidates, target):
+    res = []
+    subset = []
+
+    candidates = sorted(candidates)
+    def dfs(i):
+        # print(i, subset)
+        if target==sum(subset) and not subset in res:
+            res.append(subset[::])
+            return
+        if i>=len(candidates) or sum(subset)>target: return
+        subset.append(candidates[i])
+        dfs(i+1) 
+
+        subset.pop()
+        while i < len(candidates) - 1:
+            if (candidates[i] == candidates[i + 1]):
+                i += 1
+            else:
+                break
+
+        dfs(i + 1)
+         
+    dfs(0)
+    return res
+
+# print(combinationDFS([2,3,5], 8))
+print(combinationSum2([8,7,4,3],11))
+print(combinationSum2([10,1,2,7,6,1,5],8))
+print(combinationSum2([2,5,2,1,2],5))
+print(combinationSum2([1] * 30, 30))
 # print(combinationDFS([2,3,6,7], 7))
 # print(combinationDFS([2], 1))
 # print(combinationDFS([3,5,8], 11))
